@@ -1344,7 +1344,8 @@ public class SWFDebugSession extends DebugSession
                 Value memberValue = member.getValue();
                 long id = memberValue.getId();
 
-                // TODO: arguments.expression may not be a simple string, it can be a path like: class1.class2.variable.
+                // TODO: arguments.expression may not be a plain string, it can be a path like: "class1.class2.variable"
+                // or it can be a string which is pointing to an element of an array like: "myArray[2]"
                 // So, it would be nice to make this smarter.
                 if(member.getName().equals(arguments.expression))
                 {
